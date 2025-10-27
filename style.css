@@ -52,6 +52,8 @@ li {
     display: flex;
     align-items: center;
     gap: 15px;
+    /* Ajuste para que el texto se envuelva en móviles */
+    flex-wrap: wrap; 
 }
 
 .contact-icon {
@@ -74,4 +76,53 @@ a {
 a:hover {
     color: #0d47a1; 
     text-decoration: underline;
+}
+
+/* ==================================== */
+/* MEDIA QUERIES (RESPONSIVE)  */
+/* ==================================== */
+
+@media (max-width: 600px) {
+    
+    /* Ajustes generales del cuerpo */
+    body {
+        padding: 10px; /* Reducir el padding general */
+    }
+
+    /* Ajuste para el título principal */
+    h1 {
+        font-size: 2em; /* Reducir el tamaño de la fuente para móviles */
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+
+    /* Ajuste para el subtítulo */
+    h2 {
+        font-size: 1.5em;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    /* Ajuste para la lista de contactos */
+    ul {
+        padding: 15px; /* Reducir el padding interno de la caja */
+    }
+
+    /* Ajuste para cada elemento de la lista (li) */
+    li {
+        padding: 12px 15px;
+        font-size: 1em; /* Ligeramente más pequeño */
+        /* Eliminamos el 'flex-wrap: wrap' aquí ya que lo subimos arriba */
+    }
+
+    /* Ajuste para el texto 'Whatsapp:', 'Instagram:', etc. */
+    li strong {
+        min-width: 80px; /* Reducir el ancho mínimo */
+        text-align: left;
+    }
+
+    /* Ocultar el 'min-width' del strong si el elemento necesita más espacio */
+    li .contact-icon + strong {
+        flex-grow: 1; /* Permite que el texto se distribuya mejor */
+    }
 }
